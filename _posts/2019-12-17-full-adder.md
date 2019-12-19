@@ -17,7 +17,7 @@ categories: ml
 
 Have you ever finished reading an article on ML using Keras and felt: OK, but why didn't it talk about the concepts I studied in University? Is the abstraction provided by Keras too much for you?
 
-* If not, then you must be a genious and this article is not for you.
+* If not, then you must already be an ML expert (or a genius) and this article is not for you.
 
 * If yes, then you are at the right place!
 
@@ -159,7 +159,7 @@ Keras provides multiple ways to define a model.
 2. `Model` Functional API can define complex models, such as multi-output models, directed acyclic graphs, or models with shared layers.
 3. To get even more control, Keras allows to extend `Model` class and override `__init__` and `call` functions.
 
-In our example we don't want any feedback loop, hence `Sequencial` model would work. The layers in our network are:
+In our example we don't want any feedback loop, hence `Sequential` model would work. The layers in our network are:
 
 1. `Input`: Inputs to the network are 3 bits: a, b and c (carry).
 2. `Dense`: Hidden layer with 3 neurons. The number of neurons is arrived at experimentally.
@@ -253,7 +253,7 @@ score = model.evaluate(x_test, y_test, verbose=2)
 
 Let's write some code to add two numbers of arbitraty length.
 
-Generate two random numbers in range (0, 2<sup>`max_bits`-1</sup>), so that their sum is in the range (0, 2<sup>`max_bits`</sup>)
+Generate two random numbers in range (0, 2<sup>max_bits-1</sup>), so that their sum is in the range (0, 2<sup>max_bits</sup>)
 
 
 ```python
