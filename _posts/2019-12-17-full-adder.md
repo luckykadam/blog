@@ -5,7 +5,6 @@ date:   2019-12-17 21:00:00 +0530
 categories: ml
 ---
 
-
 <a href="https://colab.research.google.com/github/luckykadam/adder/blob/master/full_adder.ipynb">
     <img src="https://www.tensorflow.org/images/colab_logo_32px.png" />Run in Google Colab
 </a>
@@ -26,7 +25,7 @@ In this notebook, we will try to emulate Binary Full Adder using Keras. We are g
 1. define the minimal neural network to achieve this
 2. analyse every parameter learnt
 3. identify the logic learnt by each neuron
-4. write the boolean expressions learnt
+4. draw the circuit learnt
 5. embrace the "thinking process" of ML
 
 ## Background
@@ -51,7 +50,7 @@ Binary Adder is a circuit to add two binary numbers.
 
 The Half Adder is used to add two binary bits. The half adder outputs the sum of two input bits and a carry value.
 
-<img height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Half_Adder.svg/360px-Half_Adder.svg.png">
+<img height="120" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Half_Adder.svg/360px-Half_Adder.svg.png">
 
 ### Full Adder
 
@@ -59,7 +58,7 @@ A Full Adder can perform an addition operation on three bits. The full adder pro
 
 Using this unit in repeatition, two binary numbers of arbitrary length can be added.
 
-<img height="180" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Full-adder_logic_diagram.svg/800px-Full-adder_logic_diagram.svg.png">
+<img height="220" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Full-adder_logic_diagram.svg/800px-Full-adder_logic_diagram.svg.png">
 
 Boolean Expressions:
 
@@ -69,7 +68,7 @@ S = (A xor B) xor C<sub>in</sub>
 
 Simplifying them in SOP (sum of products form):
 
-C<sub>out</sub> = ABC + AB + AC + BC
+C<sub>out</sub> = AB + AC + BC
 
 S = ABC + (AB + AC + BC)'
 
@@ -82,13 +81,13 @@ Some logic gates which have a linear decision boundary(eg. AND, OR, NAND, NOR) c
 Decision boundaries for AND and OR gates:
 
 <br/>
-<img height="100" src="{{site.baseurl}}/assets/full_adder/and.png">
-<img height="100" src="{{site.baseurl}}/assets/full_adder/or.png">
+<img height="200" src="{{site.baseurl}}/assets/full_adder/and_gate.png">
+<img height="200" src="{{site.baseurl}}/assets/full_adder/or_gate.png">
 
 Decision boundaries for XOR gate:
 
 <br/>
-<img height="100" src="{{site.baseurl}}/assets/full_adder/xor.png">
+<img height="200" src="{{site.baseurl}}/assets/full_adder/xor_gate.png">
 
 ## Implementation
 
@@ -441,7 +440,7 @@ h<sub>1</sub> = A' + B' + C'
 
 h<sub>2</sub> = A + B + C
 
-h<sub>3</sub> = AB + BC + BC
+h<sub>3</sub> = AB + AC + BC
 
 Output layers:
 
@@ -454,7 +453,7 @@ o<sub>2</sub> = h<sub>1</sub>'h<sub>3</sub>' + h<sub>1</sub>'h<sub>2</sub> + h<s
 
 Eliminating h<sub>i</sub> and simplifying, we get the final expression:
 
-C<sub>out</sub> = o<sub>1</sub> = ABC + AB + AC + BC
+C<sub>out</sub> = o<sub>1</sub> = AB + AC + BC
 
 S = o<sub>2</sub> = ABC + (AB + AC + BC)'
 
@@ -462,9 +461,19 @@ These are indeed the equations for Full Adder.
 
 
 
+## Learnt Circuit
+
+From the equations, we can draw the circuit (not unique in any way).
+
+<img height="400" src="{{site.baseurl}}/assets/full_adder/full_adder_learnt_circuit.png">
+
+Looks too complicated?
+
+Yeah, maybe. But, this is it. For the given restrictions, this is what ML came up with.
+
 ## Conclusion
 
-After a little effort, we finally have the logical expression of Binary Full Adder. Though, the way it broke down the equations into intemediate variables (hidden layer) might not be very intuitive for most humans, it still learns the objective. And this argument holds for most ML applications: the hidden layer might not always make sense to human observation, yet it makes its important contribution to the final output. It would be weird to say, but we must respect the way ML "thinks".
+After a little effort, we finally have the learnt circuit of Binary Full Adder. Though, the way it broke down the equations into intemediate variables (hidden layer) might not be very intuitive for most humans, it still learns the objective. And this argument holds for most ML applications: the hidden layer might not always make sense to human observation, yet it makes its important contribution to the final output. It would be weird to say, but we must respect the way ML "thinks".
 
 Food for thought: A similar behavior is observed in non-human species. At first glance their actions might not look rational, but still they achieve the same objective as human: "survive", and sometime more effeciently. This uncertain behavior, with a pretty much certain objective, is what characterizes living beings. So, exactly how alive are these ML models? This is a topic for another day. 
 
