@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Binary Full Adder in Keras"
+title:  "Into the Keras Rabbit Hole"
 date:   2019-12-17 21:00:00 +0530
 categories: ml
 ---

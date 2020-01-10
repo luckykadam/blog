@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Custom RNN to create Binary Full Adder"
+title:  "Build your Custom RNN using Keras"
 date:   2020-01-10 21:00:00 +0530
 categories: ml
 ---
@@ -51,7 +51,7 @@ suitable here.
 ### LSTM (Long-Short Term Memory)
 <img src="{{site.baseurl}}/assets/rnn_full_adder/lstm.png" height="240">
 <br>
-This cell produces two states (cell state and hidden state) of different sizes, and an output. Hidden state and output are the exact same vector, which means only cell state is useful in the next iteration (being independent of output). If we configure the network to have cell state and output as size 1, and train, it might learn to ignore the redundant hidden state. But, there will still be parameter corresponding to hidden state, learning thing which are eventually ignored. Hence, we might actually achieve the objective, but with useless parameters learnt, which doesn't look optimal.
+This cell produces two states (cell state and hidden state) of different sizes, and an output. Hidden state and output are the exact same vector, which means only cell state is useful in the next iteration (being independent of output). If we configure the network to have cell state and output as size 1, and train, it might learn to ignore the redundant hidden state. But, there will still be parameters corresponding to hidden state, learning things which are eventually ignored. Hence, we might actually achieve the objective, but with useless parameters learnt, which doesn't look optimal.
 
 So, I guess we will have to define out own custom RNN cell. Lets jump right in ;)
 
