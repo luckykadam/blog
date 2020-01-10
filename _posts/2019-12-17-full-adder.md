@@ -479,7 +479,7 @@ Food for thought: A similar behavior is observed in non-human species. At first 
 
 ## Further Reading
 
-You might be wondering, the way we added two numbers, resembles a lot with how recurrent neural networks work. In fact, we will be developing an RNN for the same task in the next experiment.
+You might be wondering, the way we added two numbers, resembles a lot with how recurrent neural networks work. In fact, we will be developing an RNN for the same task in the <a href="https://luckykadam.github.io/ml/2020/01/10/rnn-full-adder.html">next experiment</a>.
 
 Another experiment for half adder can be found at: <https://github.com/luckykadam/adder/blob/master/half_adder.ipynb>
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Binary Full Adder using Custom RNN in Keras"
-date:   2020-01-09 21:00:00 +0530
+title:  "Custom RNN to create Binary Full Adder"
+date:   2020-01-10 21:00:00 +0530
 categories: ml
 ---
 
