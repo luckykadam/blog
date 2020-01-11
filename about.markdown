@@ -4,15 +4,12 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+<img height="250" src="{{site.baseurl}}/assets/about/profile_pic.jpg">
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+Hi am Lucky Kadam, an AI enthiusiast and Digital Artisit, currently working as Software Engineer at PhonePe Private Limited.
 
 
-[jekyll-organization]: https://github.com/jekyll
+See my artwork at [Instagram](https://instagram.com/luckykadamart)
+
+Connect with me on [LinkedId](https://linkedin.com/in/luckykadam)
