@@ -10,8 +10,8 @@ It's rare to encounter a situation where LSTM/GRU might not be the choice of RNN
 
 In this notebook, we will emulate Binary Full Adder using RNN in Keras. We will see:
 
-1. why at some situations LSTM/GRU might not be the most optimal choice
-2. how to write custom RNN layer
+1. Why at some situations LSTM/GRU might not be the most optimal choice.
+2. How to write custom RNN layer.
 
 ## Background
 
@@ -21,29 +21,31 @@ In the <a href="https://luckykadam.github.io/posts/full-adder/">previous post</a
 
 A Full Adder can perform an addition operation on three bits. The full adder produces a sum of three inputs and carry value. The carry value can then be used as input to the next full adder.
 
-Using this unit in repeatition, two binary numbers of arbitrary length can be added.
+Using this unit in repetition, two binary numbers of arbitrary length can be added.
 
 <img height="220" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Full-adder_logic_diagram.svg/800px-Full-adder_logic_diagram.svg.png">
 
 
-## RNN eumlation
+## RNN emulation
 
 The structure of Full Adder is very similar to <a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/">how RNN works</a>. We can expolit this similarity.
 
-In the current context, we want RNN cell with output and state, both of dimension 1, but representing **independent** information.
+In the current context, we want an RNN cell that can fullfill following conditions:
 
-Let's have a look at common choices of RNN cells:
+1. Output and State, both should have dimension 1.
+2. Output and State should represent **independent** information.
+
+Let's see if common choices of RNN cells satisfy these conditions:
 
 ### GRU (Gated Recurrent Unit)
 <img src="{{site.baseurl}}/assets/rnn_full_adder/gru.png" height="240">
 <br>
-This cell has output and state of same size, but they are not independent. Infact, output and state are the same vector in GRU. Hence, not 
-suitable here.
+This cell has output and state of same size, but they are not independent. Infact, output and state are the same vector in GRU. It can't satisfy the condition 2, and is not suitable here.
 
 ### LSTM (Long-Short Term Memory)
 <img src="{{site.baseurl}}/assets/rnn_full_adder/lstm.png" height="240">
 <br>
-This cell produces two states (cell state and hidden state) of different sizes, and an output. Hidden state and output are the exact same vector, which means only cell state is useful in the next iteration (being independent of output). If we configure the network to have cell state and output as size 1, and train, it might learn to ignore the redundant hidden state. But, there will still be parameters corresponding to hidden state, learning things which are eventually ignored. Hence, we might actually achieve the objective, but with useless parameters learnt, which doesn't look optimal.
+This cell produces two states (cell state and hidden state) of different sizes, and an output. Hidden state and output are the exact same vector, which means only cell state is useful in the next iteration (being independent of output). If we configure the network to have cell state and output as size 1, it might learn to ignore the redundant hidden state. But, there will still be parameters corresponding to hidden state, learning things which are eventually ignored, which doesn't look optimal.
 
 So, I guess we will have to define out own custom RNN cell. Lets jump right in ;)
 
@@ -132,16 +134,19 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, shuffle
 
 ## RNN Cell
 
-Each cell will be a neural network we came up with in the <a href="https://luckykadam.github.io/posts/full-adder/">previous post</a>.
+Each RNN cell will have the structure we came up with in the <a href="https://luckykadam.github.io/posts/full-adder/">previous post</a>.
 
-The RNN cell will have: three inputs (i<sup>th</sup> bit of the 2 numbers and previous carry), one hidden layer (3 neurons) and one output layer (2 neurons). Out of two output bits, we want one to be a part of the answer and other to be input (carry) to the next RNN cell.
+The structure has:
+
+1. Three inputs (i<sup>th</sup> bit of the 2 numbers and previous carry).
+2. One hidden layer (3 neurons).
+3. One output layer (2 neurons). Out of two output bits, we want one to be a part of the answer and other to be input (carry) to the next RNN cell.
 
 We extend `keras.layers.Layer` to define the custom RNN cell. To define any custom layer we need to follow these steps:
 
-1. define `__init__()` to initialize some object level constants. Keras requires you to declare `units` variable: dimension of the output.
-2. define `build()` to initialize all the trainable parameters and set `built=True`.
-3. define `call()` to compute the output (and state) using input and parameters.
-
+1. Define `__init__()` to initialize some object level constants. Keras requires you to declare `units` variable: dimension of the output.
+2. Define `build()` to initialize all the trainable parameters and set `built=True`.
+3. Define `call()` to compute the output (and state) using input and parameters.
 
 ```python
 class FullAdderCell(layers.Layer):
@@ -287,7 +292,7 @@ Voila! Our network worked perfectly. Its amazing, how easily we created a custom
 
 ## Conclusion
 
-Frameworks like Keras, Tensorflow and PyTorch give us power to experiment at such speed and effeciecy. Combine it with python's flexibility, and you have got a game-changer in AI department.
+Frameworks like Keras, Tensorflow and PyTorch give us power to experiment at such speed and effeciency. Combine it with python's flexibility, and you have got a game-changer in AI department.
 
 ## References:
 
