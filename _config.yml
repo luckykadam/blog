@@ -45,17 +45,13 @@ texture:
 
   style: black
 
-  # analytics_id: 'UA-154906120-1'
+  analytics_id: 'UA-154906120-1'
 
   showNav: true
 
 permalink: /posts/:title/
 
 show_excerpts: true
-
-
-# plugins:
-#   - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
