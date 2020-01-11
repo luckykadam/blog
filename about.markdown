@@ -7,7 +7,7 @@ permalink: /about/
 
 <img height="250" src="{{site.baseurl}}/assets/about/profile_pic.jpg">
 
-Hi am Lucky Kadam, an AI enthiusiast and Digital Artisit, currently working as Software Engineer at PhonePe Private Limited.
+Hi! I am Lucky Kadam, an AI enthusiast and Digital Artist, currently working as Software Engineer at PhonePe Private Limited.
 
 
 See my artwork at [Instagram](https://instagram.com/luckykadamart)
