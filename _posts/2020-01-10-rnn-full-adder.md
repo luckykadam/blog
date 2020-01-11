@@ -15,7 +15,7 @@ In this notebook, we will emulate Binary Full Adder using RNN in Keras. We will 
 
 ## Background
 
-In the <a href="https://luckykadam.github.io/ml/2019/12/17/full-adder.html">previous post</a> we developed a small neural network to simulate binary full adder. We analysed all the parameters learnt, plotted decision hypersurfaces and drew the circuit. Later, we observed how much the usage pattern resembled Recurrent Neural Network. So, lets see how to achieve the same objective using RNN.
+In the <a href="https://luckykadam.github.io/posts/full-adder/">previous post</a> we developed a small neural network to simulate binary full adder. We analysed all the parameters learnt, plotted decision hypersurfaces and drew the circuit. Later, we observed how much the usage pattern resembled Recurrent Neural Network. So, lets see how to achieve the same objective using RNN.
 
 ## Full Adder
 
@@ -132,7 +132,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, shuffle
 
 ## RNN Cell
 
-Each cell will be a neural network we came up with in the <a href="https://luckykadam.github.io/ml/2019/12/17/full-adder.html">previous post</a>.
+Each cell will be a neural network we came up with in the <a href="https://luckykadam.github.io/posts/full-adder/">previous post</a>.
 
 The RNN cell will have: three inputs (i<sup>th</sup> bit of the 2 numbers and previous carry), one hidden layer (3 neurons) and one output layer (2 neurons). Out of two output bits, we want one to be a part of the answer and other to be input (carry) to the next RNN cell.
 
