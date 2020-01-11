@@ -2,17 +2,9 @@
 layout: post
 title:  "Into the Keras Rabbit Hole"
 date:   2019-12-17 21:00:00 +0530
-categories: ml
+categories: ml keras
 ---
 
-<a href="https://colab.research.google.com/github/luckykadam/adder/blob/master/full_adder.ipynb">
-    <img src="https://www.tensorflow.org/images/colab_logo_32px.png" />Run in Google Colab
-</a>
-<a href="https://github.com/luckykadam/adder/blob/master/full_adder.ipynb">
-    <img src="https://www.tensorflow.org/images/GitHub-Mark-32px.png" />View source on GitHub
-</a>
-
-## Introduction
 
 Have you ever finished reading an article on ML using Keras and felt: OK, but why didn't it talk about the concepts I studied in University? Is the abstraction provided by Keras too much for you?
 

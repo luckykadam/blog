@@ -2,18 +2,10 @@
 layout: post
 title:  "Build your Custom RNN using Keras"
 date:   2020-01-10 21:00:00 +0530
-categories: ml
+categories: ml keras rnn
 ---
 
 
-<a href="https://colab.research.google.com/github/luckykadam/adder/blob/master/rnn_full_adder.ipynb">
-    <img src="https://www.tensorflow.org/images/colab_logo_32px.png" />Run in Google Colab
-</a>
-<a href="https://github.com/luckykadam/adder/blob/master/rnn_full_adder.ipynb">
-    <img src="https://www.tensorflow.org/images/GitHub-Mark-32px.png" />View source on GitHub
-</a>
-
-## Introduction
 It's rare to encounter a situation where LSTM/GRU might not be the choice of RNN cell. How hard it would be to identify and work-around the problem? Read on to find out.
 
 In this notebook, we will emulate Binary Full Adder using RNN in Keras. We will see:
