@@ -8,6 +8,11 @@ categories: ml keras rnn
 
 It's rare to encounter a situation where LSTM/GRU might not be the choice of RNN cell. How hard it would be to identify and work-around the problem? Read on to find out.
 
+
+<img width="100%" src="https://assets.catawiki.nl/assets/2016/3/16/e/2/6/e26f9f6c-eb65-11e5-864e-584a1ef26a55.jpg">
+<p style="text-align:center"><font size="2">Image source: https://assets.catawiki.nl</font></p>
+
+
 In this notebook, we will emulate Binary Full Adder using RNN in Keras. We will see:
 
 1. Why at some situations LSTM/GRU might not be the most optimal choice.

@@ -12,6 +12,11 @@ Have you ever finished reading an article on ML using Keras and felt: OK, but wh
 
 * If yes, then you are at the right place!
 
+
+<img width="100%" src="https://history-computer.com/CalculatingTools/Abacus/RomanAbacus.jpg">
+<p style="text-align:center"><font size="2">Image source: https://history-computer.com</font></p>
+
+
 In this notebook, we will try to emulate Binary Full Adder using Keras. We are going to:
 
 1. define the minimal neural network to achieve this
