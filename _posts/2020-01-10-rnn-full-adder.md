@@ -18,6 +18,13 @@ In this notebook, we will emulate Binary Full Adder using RNN in Keras. We will 
 1. Why at some situations LSTM/GRU might not be the most optimal choice.
 2. How to write custom RNN layer.
 
+<a href="https://colab.research.google.com/github/luckykadam/adder/blob/master/rnn_full_adder.ipynb">
+    <img src="https://www.tensorflow.org/images/colab_logo_32px.png" />Run in Google Colab
+</a>
+<a href="https://github.com/luckykadam/adder/blob/master/rnn_full_adder.ipynb">
+    <img src="https://www.tensorflow.org/images/GitHub-Mark-32px.png" />View source on GitHub
+</a>
+
 ## Background
 
 In the <a href="https://luckykadam.github.io/posts/full-adder/">previous post</a> we developed a small neural network to simulate binary full adder. We analysed all the parameters learnt, plotted decision hypersurfaces and drew the circuit. Later, we observed how much the usage pattern resembled Recurrent Neural Network. So, lets see how to achieve the same objective using RNN.

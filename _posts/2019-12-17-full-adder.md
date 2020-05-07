@@ -25,6 +25,13 @@ In this notebook, we will try to emulate Binary Full Adder using Keras. We are g
 4. draw the circuit learnt
 5. embrace the "thinking process" of ML
 
+<a href="https://colab.research.google.com/github/luckykadam/adder/blob/master/full_adder.ipynb">
+    <img src="https://www.tensorflow.org/images/colab_logo_32px.png" />Run in Google Colab
+</a>
+<a href="https://github.com/luckykadam/adder/blob/master/full_adder.ipynb">
+    <img src="https://www.tensorflow.org/images/GitHub-Mark-32px.png" />View source on GitHub
+</a>
+
 ## Background
 
 I always felt uncomfortable following Machine Learning tutorials. It looked like magic to me. My smallest tweak would break the code apart. In the meanwhile, I did come across some great articles, which really helped me put together the pieces of "the puzzle".
