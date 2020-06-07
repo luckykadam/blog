@@ -38,8 +38,9 @@ texture:
   date_format: "%b %-d, %Y"
 
   social_links:
-    # twitter: thelehhman
-    # instagram: luckykadamart
+    twitter: luckykadam94
+    instagram: luckykadam94
+    youtube: luckykadam94
     github:  luckykadam
     linkedIn: in/luckykadam # format: locale/username
 
